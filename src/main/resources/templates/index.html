@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Friend List</title>
+</head>
+<body>
+    <h1>Friend List</h1>
+    <ul th:if="${#lists.size(friendList) > 0}">
+        <li th:each="friend : ${friendList}" th:text="${friend}"></li>
+    </ul>
+    <form action="/addFriend" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
